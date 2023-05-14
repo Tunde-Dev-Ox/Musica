@@ -1,0 +1,443 @@
+@import 'variables';
+@import 'mixins';
+
+// header custom styling
+.mainHeader {
+  width: 100%;
+  height: 70px;
+  background-color: $mainBg;
+  position: fixed;
+  top: 0;
+  z-index: 4000;
+  // backdrop-filter: blur(10px);
+
+  .nav__main-wrapper {
+    width: inherit;
+    height: inherit;
+
+    .nav__inner-wrapper {
+      @include flex;
+      justify-content: flex-start;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 0;
+      height: 100%;
+      @include sidePadding {
+        padding: 0 4vw;
+      }
+      @include tablet {
+        justify-content: space-between;
+      }
+
+      .logo__wrapper {
+        @include flex;
+        margin-right: 2.1rem;
+        width: 70px;
+        justify-content: center;
+
+        .menu__iconWrapper {
+          display: none;
+          @include tablet {
+            display: block;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .search-input__wrapper {
+        @include flex;
+        width: 100%;
+        background-color: transparent;
+        @include tablet {
+          display: none;
+        }
+
+        .search-icon__wrapper {
+          margin-right: 12px;
+          display: flex;
+          align-items: center;
+
+          .search__btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+          }
+        }
+
+        .search__input {
+          padding: 1rem;
+          background-color: rgba(255, 255, 255);
+          border: none;
+          outline: none;
+          color: rgba(0, 0, 0, 0.557);
+          font-size: 0.8rem;
+          line-height: 1.1;
+          width: 400px;
+          cursor: text;
+          font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana,
+            sans-serif;
+          border-radius: 500px;
+        }
+      }
+
+      .mobile-search-icon__wrapper {
+        display: none;
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.album--charts-mainHeader {
+  background: transparent;
+}
+
+// sidebar custom styling
+.sidebar__container {
+  width: 56px;
+  background-color: transparent;
+  height: 360px;
+  position: fixed;
+  top: 80px;
+  z-index: 4000;
+  @include tablet {
+    display: none;
+  }
+
+  .sidebar__innerWrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    // gap: 1.4rem;
+
+    .top-sidebar__wrapper {
+      background-color: $sidebarBg;
+      width: 100%;
+      // height: 30%;
+      border-radius: 40px;
+      @include flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.3rem 0 1.6rem;
+      // gap: 2%;
+
+      .top-side-icon__wrapper {
+        display: block;
+      }
+    }
+
+    .lower-sidebar__wrapper {
+      background-color: $sidebarBg;
+      width: 100%;
+      // height: 18%;
+      border-radius: 40px;
+      @include flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.6rem 0;
+      margin-top: 9px;
+      // gap: 2%;
+    }
+
+    .sidebar--margin {
+      margin-top: 20px;
+    }
+  }
+}
+
+// playmode styling
+.play-mode__outerWrapper {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  backdrop-filter: blur(10px);
+  background: rgba(16, 16, 16, 0.81);
+  z-index: 4000;
+
+  .play__mode {
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    @include sidePadding {
+      padding: 0 4vw;
+    }
+
+    .play__mode-Wrapper {
+      max-width: 1300px;
+      margin-left: 90px;
+      padding: 1rem 0;
+      display: grid;
+      grid-template-columns: 10% 60% 16%;
+      gap: 2%;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      @include tablet {
+        margin-left: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .play__modeArtistWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .james__image {
+          display: flex;
+          align-items: center;
+          // width: 100%;
+        }
+
+        .artist__info {
+          margin-left: 5px;
+          display: flex;
+          gap: 10px;
+          flex-direction: column;
+
+          .track__title {
+            font-size: 12px;
+            word-wrap: normal;
+            line-height: 1.1;
+            font-weight: 600;
+            font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana,
+              sans-serif;
+          }
+
+          .track-artiste__name {
+            font-size: 0.615rem;
+            color: rgba(255, 255, 255, 0.44);
+            line-height: 1;
+            font-family: Quicksand-light, 'Segoe UI', Tahoma, Geneva, Verdana,
+              sans-serif;
+          }
+        }
+      }
+
+      .play__section {
+        @include flex;
+        flex-direction: column;
+        @include tablet {
+          display: none;
+        }
+
+        .play__section-upper {
+          @include flex;
+          justify-content: center;
+          width: 100%;
+          margin-bottom: 0.3rem;
+
+          .play-section__elements {
+            margin: 0 25px;
+            padding: 0.8rem;
+          }
+
+          .play--border-radius {
+            background-color: rgba(250, 205, 102, 1);
+            border-radius: 50%;
+            box-shadow: 0 0 50px #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        .play__movement-wrapper {
+          width: 100%;
+        }
+      }
+
+      .volume__wrapper {
+        @include flex;
+        @include tablet {
+          display: none;
+        }
+
+        .volume-icon__wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .volume-degree__wrapper {
+          margin-left: 8px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .volume__degree {
+            width: 100%;
+          }
+        }
+      }
+
+      .mobile-playForward__wrapper {
+        display: none;
+        @include tablet {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-left: auto;
+        }
+
+        .play__wrapper {
+          background-color: rgb(250 205 102);
+          border-radius: 50%;
+          box-shadow: 0 0 50px #fff;
+          padding: 0.7rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .next__wrapper {
+          margin-left: 19px;
+        }
+      }
+    }
+  }
+}
+
+//User not signed in header
+.signupLogin-Wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: inherit;
+  width: 100%;
+}
+
+.signupLogin-InnerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.chevron--btns {
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+  white-space: nowrap;
+
+  .ql0zZd7giPXSnPg75NR0 {
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    display: inline-flex;
+    align-items: center;
+    background-color: $mainBg;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    height: 32px;
+    justify-content: center;
+    position: relative;
+    width: 32px;
+    font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana,
+      sans-serif;
+
+    .Svg-sc-ytk21e-0 {
+      opacity: 1;
+      fill: currentColor;
+    }
+  }
+}
+
+.signinLoginButton_Wrapper {
+  pointer-events: auto;
+  white-space: nowrap;
+
+  .signup--btn {
+    padding-inline-start: 8px;
+    overflow-wrap: anywhere;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana,
+      sans-serif;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 500px;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    touch-action: manipulation;
+    transition-duration: 33ms;
+    transition-property: background-color, border-color, color, box-shadow,
+      filter, transform;
+    user-select: none;
+    vertical-align: middle;
+    transform: translate3d(0px, 0px, 0px);
+    color: var(--text-subdued, #6a6a6a);
+    min-inline-size: 0px;
+    padding-block: 8px;
+    min-block-size: 48px;
+    padding-inline: 32px;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+  }
+
+  .login--btn {
+    -webkit-tap-highlight-color: transparent;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: Quicksand-Musica, 'Segoe UI', Tahoma, Geneva, Verdana,
+      sans-serif;
+    background-color: transparent;
+    border: 0px;
+    border-radius: 500px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition-duration: 33ms;
+    transition-property: background-color, border-color, color, box-shadow,
+      filter, transform;
+    user-select: none;
+    vertical-align: middle;
+    transform: translate3d(0px, 0px, 0px);
+    padding: 0px;
+    min-inline-size: 0px;
+    align-self: center;
+
+    .login--content {
+         -webkit-tap-highlight-color: transparent;
+         position: relative;
+         background-color: #fff;
+         color: #000;
+         display: flex;
+         border-radius: 500px;
+         font-size: inherit;
+         min-block-size: 48px;
+         -webkit-box-align: center;
+         align-items: center;
+         -webkit-box-pack: center;
+         justify-content: center;
+         padding-block: 8px;
+         padding-inline: 32px;
+    }
+  }
+}
+
+.collection--displayNone {
+  @include tablet {
+    display: none;
+  }
+}
